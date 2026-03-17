@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 import DATA from "../data";
-// import profile from "/"/;
+// import profile from ".."
 
 interface HeroProps {
   onNav: (section: string) => void;
@@ -31,11 +31,11 @@ export default function Hero({ onNav, setHovering }: HeroProps) {
         }}
       >
         <img
-          src="/src/assets/image_2.jpg"
+          src="/src/public/pp.jpeg"
           alt="Profile"
           style={{
             width: "200px",
-            height: "250px",
+            height: "290px",
             objectFit: "cover",
             borderRadius: "50%",
             border: "3px solid #FF4D00",
