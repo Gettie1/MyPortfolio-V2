@@ -1,6 +1,5 @@
 import { MouseEvent } from "react";
 import DATA from "../data";
-// import profile from ".."
 
 interface HeroProps {
   onNav: (section: string) => void;

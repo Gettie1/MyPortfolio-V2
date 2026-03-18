@@ -37,8 +37,8 @@ export default function App() {
       <div style={{
         position: "fixed", top: cursorPos.y - 10, left: cursorPos.x - 10,
         width: 20, height: 20, borderRadius: "50%",
-        background: hovering ? "#FF4D00" : "transparent",
-        border: "2px solid #FF4D00",
+        // background: hovering ? "#FF4D00" : "transparent",
+        // border: "2px solid #FF4D00",
         pointerEvents: "none", zIndex: 9999,
         transition: "width 0.2s, height 0.2s, background 0.2s, top 0.05s, left 0.05s",
         transform: hovering ? "scale(2)" : "scale(1)",
