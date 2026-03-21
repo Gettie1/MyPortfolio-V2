@@ -12,105 +12,12 @@ export default function Hero({ onNav, setHovering }: HeroProps) {
       style={{
         minHeight: "100vh",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
+        alignItems: "center",
         padding: "0 3rem",
         position: "relative",
         overflow: "hidden",
       }}
     >
-
-      {/* Profile Image Top Right */}
-      <div
-        style={{
-          position: "absolute",
-          top: "4rem",
-          right: "10rem",
-          zIndex: 2,
-        }}
-      >
-        <img
-          src="/public/pp.jpeg"
-          alt="Profile"
-          style={{
-            width: "200px",
-            height: "290px",
-            objectFit: "cover",
-            borderRadius: "50%",
-            border: "3px solid #FF4D00",
-            boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
-          }}
-        />
-         {/* Buttons */}
-        <div
-          style={{
-            display: "flex",
-            gap: "1rem",
-            marginTop: "3rem",
-            opacity: 0,
-            animation: "fadeUp 0.8s ease 0.8s forwards",
-          }}
-        >
-          <button
-            onClick={() => onNav("Projects")}
-            onMouseEnter={() => setHovering(true)}
-            onMouseLeave={() => setHovering(false)}
-            style={{
-              padding: "0.9rem 2.2rem",
-              background: "#FF4D00",
-              color: "#fff",
-              border: "none",
-              fontFamily: "'Space Mono', monospace",
-              fontSize: "0.8rem",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              cursor: "pointer",
-              clipPath:
-                "polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%)",
-              transition: "background 0.2s",
-            }}
-            onMouseOver={(e: MouseEvent<HTMLButtonElement>) =>
-              ((e.target as HTMLButtonElement).style.background = "#e03d00")
-            }
-            onMouseOut={(e: MouseEvent<HTMLButtonElement>) =>
-              ((e.target as HTMLButtonElement).style.background = "#FF4D00")
-            }
-          >
-            View Work
-          </button>
-
-          <button
-            onClick={() => onNav("Contact")}
-            onMouseEnter={() => setHovering(true)}
-            onMouseLeave={() => setHovering(false)}
-            style={{
-              padding: "0.9rem 2.2rem",
-              background: "transparent",
-              color: "#f0f0f0",
-              border: "1px solid #333",
-              fontFamily: "'Space Mono', monospace",
-              fontSize: "0.8rem",
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              cursor: "pointer",
-              transition: "border-color 0.2s, color 0.2s",
-            }}
-            onMouseOver={(e: MouseEvent<HTMLButtonElement>) => {
-              const btn = e.target as HTMLButtonElement;
-              btn.style.borderColor = "#FF4D00";
-              btn.style.color = "#FF4D00";
-            }}
-            onMouseOut={(e: MouseEvent<HTMLButtonElement>) => {
-              const btn = e.target as HTMLButtonElement;
-              btn.style.borderColor = "#333";
-              btn.style.color = "#f0f0f0";
-            }}
-          >
-            Get In Touch
-          </button>
-        </div>
-      </div>
-
       {/* Background grid */}
       <div
         style={{
@@ -139,50 +46,151 @@ export default function Hero({ onNav, setHovering }: HeroProps) {
         }}
       />
 
-      <div style={{ position: "relative", zIndex: 1, maxWidth: "900px" }}>
+      {/* MAIN FLEX CONTAINER */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "3rem",
+          flexWrap: "wrap",
+          width: "100%",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        {/* LEFT SIDE (TEXT) */}
+        <div style={{ flex: "1 1 500px" }}>
+          {/* Name */}
+          <h1
+            style={{
+              fontFamily: "'Bebas Neue', cursive",
+              fontSize: "clamp(4rem, 12vw, 10rem)",
+              lineHeight: 0.9,
+              marginTop: 40,
+              marginBottom: 0,
+              letterSpacing: "0.02em",
+            }}
+          >
+            {DATA.name.split(" ").map((word, i) => (
+              <span
+                key={i}
+                style={{
+                  display: "block",
+                  color: i === 1 ? "#FF4D00" : "#f0f0f0",
+                }}
+              >
+                {word}
+              </span>
+            ))}
+          </h1>
 
-        {/* Name */}
-        <h1
-          style={{
-            fontFamily: "'Bebas Neue', cursive",
-            fontSize: "clamp(4rem, 12vw, 10rem)",
-            lineHeight: 0.9,
-            margin: 0,
-            letterSpacing: "0.02em",
-            opacity: 0,
-            animation: "fadeUp 0.8s ease 0.4s forwards",
-          }}
-        >
-          {DATA.name.split(" ").map((word, i) => (
-            <span
-              key={i}
+          {/* Tagline */}
+          <p
+            style={{
+              fontSize: "1.2rem",
+              color: "#888",
+              maxWidth: "520px",
+              marginTop: "2rem",
+              lineHeight: 1.7,
+            }}
+          >
+            {DATA.tagline}
+          </p>
+
+          {/* BUTTONS */}
+          <div
+            style={{
+              marginTop: "2rem",
+              display: "flex",
+              gap: "1rem",
+              flexWrap: "wrap",
+            }}
+          >
+            <button
+              onClick={() => onNav("Projects")}
+              onMouseEnter={() => setHovering(true)}
+              onMouseLeave={() => setHovering(false)}
               style={{
-                display: "block",
-                color: i === 1 ? "#FF4D00" : "#f0f0f0",
+                padding: "0.9rem 2.2rem",
+                background: "#FF4D00",
+                color: "#fff",
+                border: "none",
+                fontFamily: "'Space Mono', monospace",
+                fontSize: "0.8rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                cursor: "pointer",
+                clipPath:
+                  "polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%)",
+                transition: "background 0.2s",
+                width: "fit-content",
+              }}
+              onMouseOver={(e: MouseEvent<HTMLButtonElement>) =>
+                ((e.target as HTMLButtonElement).style.background = "#e03d00")
+              }
+              onMouseOut={(e: MouseEvent<HTMLButtonElement>) =>
+                ((e.target as HTMLButtonElement).style.background = "#FF4D00")
+              }
+            >
+              View Work
+            </button>
+
+            <button
+              onClick={() => onNav("Contact")}
+              onMouseEnter={() => setHovering(true)}
+              onMouseLeave={() => setHovering(false)}
+              style={{
+                padding: "0.9rem 2.2rem",
+                background: "transparent",
+                color: "#f0f0f0",
+                border: "1px solid #333",
+                fontFamily: "'Space Mono', monospace",
+                fontSize: "0.8rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                cursor: "pointer",
+                transition: "border-color 0.2s, color 0.2s",
+                width: "fit-content",
+              }}
+              onMouseOver={(e: MouseEvent<HTMLButtonElement>) => {
+                const btn = e.target as HTMLButtonElement;
+                btn.style.borderColor = "#FF4D00";
+                btn.style.color = "#FF4D00";
+              }}
+              onMouseOut={(e: MouseEvent<HTMLButtonElement>) => {
+                const btn = e.target as HTMLButtonElement;
+                btn.style.borderColor = "#333";
+                btn.style.color = "#f0f0f0";
               }}
             >
-              {word}
-            </span>
-          ))}
-        </h1>
+              Get In Touch
+            </button>
+          </div>
+        </div>
 
-        {/* Tagline */}
-        <p
+        {/* RIGHT SIDE (IMAGE) */}
+        <div
           style={{
-            fontSize: "1.2rem",
-            color: "#888",
-            maxWidth: "520px",
-            marginTop: "2rem",
-            lineHeight: 1.7,
-            fontWeight: 300,
-            opacity: 0,
-            animation: "fadeUp 0.8s ease 0.6s forwards",
+            flex: "1 1 300px",
+            display: "flex",
+            justifyContent: "center",
           }}
         >
-          {DATA.tagline}
-        </p>
-
-       
+          <img
+            src="/pp.jpeg"
+            alt="Profile"
+            style={{
+              width: "clamp(180px, 25vw, 280px)",
+              height: "auto",
+              aspectRatio: "2 / 3",
+              objectFit: "cover",
+              borderRadius: "50% / 40%",
+              border: "3px solid #FF4D00",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.4)",
+            }}
+          />
+        </div>
       </div>
     </section>
   );
