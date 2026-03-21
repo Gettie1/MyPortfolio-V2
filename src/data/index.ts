@@ -35,7 +35,7 @@ const DATA: PortfolioData = {
     desc: "A web platform that connects customers with car wash vendors. Includes booking, service selection, payments, reviews, schedules, and role-based dashboards for admin, vendors, and users.",
     stack: ["React", "TanStack Router", "NestJS", "PostgreSQL", "Paystack"],
     color: "#FF4D00",
-    link: "https://carwash-management-system.vercel.app/",
+    link: "https://aggregator-car-wash-app.vercel.app/",
   },
   {
     title: "Student Record Management System",
@@ -43,7 +43,7 @@ const DATA: PortfolioData = {
     desc: "A system for managing student records, courses, subjects, and registrations. Includes admin and student dashboards, audit logs, reporting, and feedback modules.",
     stack: ["React", "NestJS", "TypeORM", "PostgreSQL"],
     color: "#7B2FFF",
-    link: "https://student-record-management-system.vercel.app/",
+    link: "https://meme-board-navy.vercel.app/",
   },
   {
     title: "Parcel Delivery Tracking System",
