@@ -30,7 +30,7 @@ export default function Hero({ onNav, setHovering }: HeroProps) {
         }}
       >
         <img
-          src="/src/public/pp.jpeg"
+          src="/public/pp.jpeg"
           alt="Profile"
           style={{
             width: "200px",
